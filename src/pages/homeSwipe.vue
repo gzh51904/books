@@ -25,15 +25,15 @@ export default {
 <style>
 /* 轮播图 */
 .mint-swipe {
-  height: 1.35rem;
-  margin-top: 0.54rem;
+  height: 2.25rem;
+  margin-top: 0.9rem;
 }
 .mint-swipe-item img {
-  height: 1.35rem;
+  height: 2.25rem;
   width: 100%;
 }
 .mint-swipe-indicators {
-  bottom: -0.2rem;
+  bottom: 0rem;
 }
 .mint-swipe-indicator {
   background: #fff;

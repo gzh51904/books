@@ -28,36 +28,37 @@ export default {
 <style>
 .pagefoot{
     background: #fff;
-    margin-bottom:0.57rem;
+    margin-bottom:0.95rem;
 }
 .pagefoot .actions-wrap {
     text-align: center;
     line-height: 0;
-    padding: 0.12rem 0;
+    padding: 0.2rem 0;
     border-bottom: 1px solid #f3f3f3;
+    box-sizing: border-box;
 }
 .pagefoot .actions-wrap a {
     display: inline-block;
     border: 1px solid #999999;
-    height: 0.22rem;
-    line-height: 0.22rem;
+    height: 0.38rem;
+    line-height: 0.38rem;
     color: #666666;
-    font-size: 0.14rem;
-    padding: 0 0.09rem;
-    border-radius: 0.02rem;
-    margin:0.09rem;
+    font-size: 0.24rem;
+    padding: 0 0.15rem;
+    border-radius: 0.04rem;
+    margin:0 0.15rem;
 }
 .pagefoot .b-nav {
     text-align: center;
-    font-size: 0.07rem;
+    font-size: 0.22rem;
     color: #666666;
-    line-height: 0.22rem;
+    line-height: 0.6rem;
 }
 .pagefoot .copyRight {
     font-size: 0.14rem;
     color: #8e8e8e;
     text-align: center;
-    line-height: 0.3rem;
+    line-height: 0.82rem;
 }
 .pagefoot .b-nav a.red {
     color: #e60000;

@@ -34,21 +34,21 @@ export default {
 <style>
 /* 推荐书单 */
 .recommendWrap {
-    margin-top: 0.1rem;
+    margin-top: 0.16rem;
 }
 
 .recommendTit h2 img {
-    width: 1.38rem;
+    width: 2.3rem;
 }
 .recommenList {
     overflow: hidden;
-    padding: 0.06rem 0.03rem;
+    padding: 0.1rem 0.05rem;
     background: #fff;
 }
 .recommenList .recommenLeft {
     float: left;
     width: 50%;
-    padding: 0 0.03rem;
+    padding: 0 0.05rem;
     box-sizing: border-box;
 }
 .recommenList img {
@@ -58,12 +58,12 @@ export default {
     overflow: hidden;
     float: right;
     width: 50%;
-    padding: 0 0.03rem;
+    padding: 0 0.05rem;
     box-sizing: border-box;
 }
 .recommenList .recommenright a {
     float: left;
     width: 100%;
-    margin-bottom: 0.06rem;
+    margin-bottom: 0.1rem;
 }
 </style>

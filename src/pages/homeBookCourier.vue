@@ -68,36 +68,36 @@ export default {};
 <style>
 /* 新书速递 */
 .BookCourierWrap {
-  margin-top: 0.1rem;
+  margin-top: 0.16rem;
 }
 .courierList ul {
-  padding: 0 0.03rem;
+  padding: 0 0.05rem;
   background: #fff;
   overflow: hidden;
-  padding-bottom: 0.11rem;
+  padding-bottom: 0.18rem;
 }
 .courierList ul li {
   float: left;
   width: 33.33333333333%;
-  padding: 0 0.03rem;
-  margin-top: 0.12rem;
+  padding: 0 0.05rem;
+  margin-top: 0.2rem;
   box-sizing: border-box;
 }
 .courierList ul li .cover {
   text-align: center;
-  padding: 0.03rem 0;
+  padding: 0.05rem 0;
 }
 .courierList ul li .cover img {
   max-width: 100%;
-  height: 1.2rem;
+  height: 2rem;
 }
 .courierList ul li .name {
   color: #000;
-  font-size: 0.13rem;
-  line-height: 0.18rem;
-  margin-top: 0.06rem;
-  padding: 0 0.06rem;
-  height: 0.36rem;
+  font-size: 0.22rem;
+  line-height: 0.3rem;
+  margin-top: 0.1rem;
+  padding: 0 0.1rem;
+  height: 0.6rem;
   text-overflow: ellipsis;
   overflow: hidden;
   -webkit-line-clamp: 2;
@@ -106,20 +106,20 @@ export default {};
 }
 .courierList ul li .priceWrap {
   overflow: hidden;
-  padding: 0 0.06rem;
-  line-height: 0.18rem;
-  margin-top: 0.04rem;
+  padding: 0 0.1rem;
+  line-height: 0.3rem;
+  margin-top: 0.07rem;
 }
 .courierList ul li .priceWrap .price {
   float: left;
   color: #e60000;
-  font-size: 0.14rem;
+  font-size: 0.24rem;
 }
 .courierList ul li .priceWrap .original {
   float: left;
   color: #999999;
-  font-size: 0.13rem;
-  margin-left: 0.08rem;
+  font-size: 0.22rem;
+  margin-left: 0.14rem;
   text-decoration: line-through;
 }
 </style>

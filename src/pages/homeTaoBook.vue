@@ -83,13 +83,13 @@ a {
 .taoBook .title {
   position: relative;
   background: #fff;
-  padding-top: 0.05rem;
+  padding-top: 0.08rem;
 }
 .taoBook .title h2 {
-  height: 0.3rem;
+  height: 0.5rem;
 }
 .taoBook .title h2 img {
-  width: 1.4rem;
+  width: 2.3rem;
 }
 .taoBook .title a {
   position: absolute;
@@ -97,36 +97,36 @@ a {
   top: 0;
   overflow: hidden;
   color: #666;
-  height: 0.18rem;
-  margin-top: 0.08rem;
+  height: 0.3rem;
+  margin-top: 0.2rem;
   border: 1px solid #666;
-  border-radius: 0.18rem;
-  margin-right: 0.06rem;
-  padding: 0 0.09rem 0 0.09rem;
-  font-size: 0.12rem;
-  line-height: 0.18rem;
+  border-radius: 0.28rem;
+  margin-right: 0.1rem;
+  padding: 0 0.16rem 0 0.16rem;
+  font-size: 0.18rem;
+  line-height: 0.28rem;
 }
 .taoBook .title a::after {
   content: "";
   float: right;
   background: url(../assets/imgs/home/rightblaickarrow.png) no-repeat center;
-  background-size: 0.04rem 0.07rem;
-  width: 0.04rem;
-  height: 0.07rem;
-  margin: 0.05rem 0 0 0.05rem;
+  background-size: 0.06rem 0.11rem;
+  width: 0.06rem;
+  height: 0.11rem;
+  margin: 0.08rem 0 0 0.08rem;
 }
 .taoList {
   background: #fff;
 }
 .taoList ul {
   overflow: hidden;
-  padding: 0 0.03rem 0.06rem;
+  padding: 0 0.05rem 0.1rem;
 }
 .taoList li {
   float: left;
   width: 50%;
-  margin: 0.06rem 0 0 0;
-  padding: 0 0.03rem;
+  margin: 0.1rem 0 0 0;
+  padding: 0 0.05rem;
   box-sizing: border-box;
 }
 .taoList li .bookWrap {
@@ -134,18 +134,18 @@ a {
 }
 .taoList li .cover img {
   width: 100%;
-  font-size: 0.12rem;
+  font-size: 12px;
 }
 .taoList li .name {
   position: relative;
   color: #000000;
-  line-height: 0.17rem;
-  height: 0.35rem;
-  font-size: 0.13rem;
+  line-height: 0.3rem;
+  height: 0.6rem;
+  font-size: 0.22rem;
   overflow: hidden;
-  text-indent: 0.18rem;
-  padding: 0 0.06rem;
-  margin-top: 0.1rem;
+  text-indent: 0.3rem;
+  padding: 0 0.1rem;
+  margin-top: 0.16rem;
   text-overflow: ellipsis;
   overflow: hidden;
   -webkit-line-clamp: 2;
@@ -157,50 +157,50 @@ a {
 .taoList ul li .name span {
   border-radius: 0.02rem;
   position: absolute;
-  height: 0.13rem;
-  width: 0.13rem;
+  height: 0.22rem;
+  width: 0.22rem;
   background: #ed0b0e;
   color: #ffffff;
   text-align: center;
-  line-height: 0.12rem;
-  font-size: 0.1rem;
-  left: 0.06rem;
-  top: 0.01rem;
+  line-height: 0.22rem;
+  font-size: 0.16rem;
+  left: 0.1rem;
+  top: 0.02rem;
   text-indent: 0px;
 }
 .taoList li .priceWrap {
-  font-size: 0.12rem;
+  font-size: 0.18rem;
 }
 .taoList li .priceWrap .Tprice {
-  padding: 0 0.06rem;
+  padding: 0 0.1rem;
   color: #e60000;
-  font-size: 0.12rem;
-  line-height: 0.18rem;
-  margin-top: 0.05rem;
+  font-size: 0.18rem;
+  line-height: 0.28rem;
+  margin-top: 0.08rem;
 }
 .taoList li .priceWrap .Tprice span {
-  font-size: 0.14rem;
+  font-size: 0.24rem;
 }
 .taoList li .priceWrap .discountWrap {
-  padding: 0 0 0.1rem 0.06rem;
+  padding: 0 0 0.16rem 0.1rem;
   overflow: hidden;
-  margin-top: 0.025rem;
+  margin-top: 0.04rem;
 }
 .taoList li .priceWrap .discountWrap .original {
   float: left;
   text-decoration: line-through;
   color: #9a9a9a;
-  font-size: 0.12rem;
-  line-height: 0.18rem;
+  font-size: 0.2rem;
+  line-height: 0.3rem;
 }
 .taoList li .priceWrap .discountWrap .discount {
   float: right;
-  height: 0.16rem;
-  line-height: 0.16rem;
-  font-size: 0.12rem;
+  height: 0.26rem;
+  line-height: 0.26rem;
+  font-size: 0.18rem;
   color: #fff;
   background: #efb64d;
-  border-radius: 0.16rem 0 0 0.16rem;
-  padding: 0 0.04rem;
+  border-radius: 0.26rem 0 0 0.26rem;
+  padding: 0 0.06rem;
 }
 </style>

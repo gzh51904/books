@@ -71,13 +71,11 @@ export default {
       selected: "Home"
     };
   },
-  computed: {
-    
-  },
+  computed: {},
   methods: {
-    goto(){
-      console.log('this.$router',this.$router)
-      this.$router.push({name:this.selected});
+    goto() {
+      console.log("this.$router", this.$router);
+      this.$router.push({ name: this.selected });
     }
   },
   created() {
@@ -103,98 +101,95 @@ export default {
 html {
   font-size: 100px;
 }
-@media screen and (max-width: 384px) {
+@media all and (max-width: 640px) {
   html {
-    font-size: 60px;
+    font-size: 100px;
+  }
+}
+@media all and (max-width: 624px) {
+  html {
+    font-size: 97.5px;
+  }
+}
+@media all and (max-width: 608px) {
+  html {
+    font-size: 95px;
+  }
+}
+@media all and (max-width: 592px) {
+  html {
+    font-size: 92.5px;
+  }
+}
+@media all and (max-width: 576px) {
+  html {
+    font-size: 90px;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media all and (max-width: 560px) {
   html {
-    font-size: 62.5px;
+    font-size: 87.5px;
+  }
+}
+@media all and (max-width: 544px) {
+  html {
+    font-size: 85px;
+  }
+}
+@media all and (max-width: 528px) {
+  html {
+    font-size: 82.5px;
+  }
+}
+@media all and (max-width: 512px) {
+  html {
+    font-size: 80px;
+  }
+}
+@media all and (max-width: 496px) {
+  html {
+    font-size: 77.5px;
   }
 }
 
-@media screen and (max-width: 416px) {
-  html {
-    font-size: 65px;
-  }
-}
-
-@media screen and (max-width: 432px) {
-  html {
-    font-size: 67.5px;
-  }
-}
-
-@media screen and (max-width: 448px) {
-  html {
-    font-size: 70px;
-  }
-}
-
-@media screen and (max-width: 464px) {
-  html {
-    font-size: 72.5px;
-  }
-}
-
-@media screen and (max-width: 480px) {
+@media all and (max-width: 480px) {
   html {
     font-size: 75px;
   }
 }
 
-@media screen and (max-width: 496px) {
+@media all and (max-width: 464px) {
   html {
-    font-size: 77.5px;
+    font-size: 72.5px;
   }
 }
-@media screen and (max-width: 512px) {
+@media all and (max-width: 448px) {
   html {
-    font-size: 80px;
+    font-size: 70px;
   }
 }
-@media screen and (max-width: 528px) {
+@media all and (max-width: 432px) {
   html {
-    font-size: 82.5px;
+    font-size: 67.5px;
   }
 }
-@media screen and (max-width: 544px) {
+@media all and (max-width: 416px) {
   html {
-    font-size: 85px;
+    font-size: 65px;
   }
 }
-@media screen and (max-width: 560px) {
+@media all and (max-width: 400px) {
   html {
-    font-size: 87.5px;
+    font-size: 62.5px;
   }
 }
-@media screen and (max-width: 576px) {
+@media all and (max-width: 384px) {
   html {
-    font-size: 90px;
+    font-size: 60px;
   }
 }
-@media screen and (max-width: 592px) {
-  html {
-    font-size: 92.5px;
-  }
-}
-@media screen and (max-width: 608px) {
-  html {
-    font-size: 95px;
-  }
-}
-@media screen and (max-width: 624px) {
-  html {
-    font-size: 97.5px;
-  }
-}
-@media screen and (max-width: 640px) {
-  html {
-    font-size: 100px;
-  }
-}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -211,9 +206,27 @@ li {
 }
 
 .mint-tabbar {
-  height: 0.55rem;
+  height: 0.88rem;
   position: fixed;
   bottom: 0;
+  z-index: 100;
+}
+.mint-tabbar a {
+    color: #333333;
+    font-size: 0.22rem;
+    display: block;
+    height: 0.88rem;
+}
+.mint-tab-item-icon {
+  width: 0.36rem;
+  margin: auto;
+  margin-top: 0.03rem;
+  height: 0.36rem;
+}
+.mint-tab-item-label{
+  text-align: center;
+  line-height: 0.5rem;
+  font-size: 0.22rem;
 }
 .fontRedColor {
   color: red !important;

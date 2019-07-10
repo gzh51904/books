@@ -47,7 +47,7 @@ export default {
 .index-nav {
   overflow: hidden;
   background-color: #fff;
-  padding: 0.12rem 0 0.09rem;
+  padding: 0.2rem 0 0.15rem;
 }
 .index-nav li {
   width: 20%;
@@ -57,16 +57,16 @@ export default {
 .index-nav li img {
   display: block;
   margin: auto;
-  width: 0.43rem;
-  height: 0.43rem;
+  width: 0.72rem;
+  height: 0.72rem;
   font-size: 12px;
   color: #666;
 }
 .index-nav li span {
   display: block;
-  font-size: 0.13rem;
-  line-height: 0.18rem;
-  margin-top: 0.03rem;
+  font-size: 0.22rem;
+  line-height: 0.27rem;
+  margin-top: 0.05rem;
   color: #333333;
 }
 </style>

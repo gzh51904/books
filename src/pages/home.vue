@@ -9,6 +9,14 @@
     <homeNotice></homeNotice>
     <!-- newBook -->
     <homeNewBook></homeNewBook>
+
+    <div class="swiper-container swiper-container3">
+      <img
+        src="http://image31.bookschina.com/pro-images/190710sx/700185.jpg?id=1"
+        alt="囤书避暑|低至1元|3本折上7折"
+      />
+    </div>
+
     <!-- 淘书 -->
     <homeTaoBook></homeTaoBook>
     <!-- 热评 -->
@@ -46,34 +54,36 @@ import homeFooter from "./homeFooter.vue";
 export default {
   data() {
     return {
-       backtopShow:0,
-       hotListNav:null,
-       hotListNavTop:0,
-       headerIsShow:true,
+      backtopShow: 0,
+      hotListNav: null,
+      hotListNavTop: 0,
+      headerIsShow: true
     };
   },
   mounted() {
-
     this.hotListNav = this.$refs.hotList.$refs.hotNavBar;
-    this.hotListNavTop = this.hotListNav.offsetTop+this.hotListNav.offsetHeight + 380;
+    this.hotListNavTop =
+      this.hotListNav.offsetTop + this.hotListNav.offsetHeight + 380;
 
     //监听滚动条滚动
-    window.addEventListener('scroll', this.handleScroll)
-
+    window.addEventListener("scroll", this.handleScroll);
   },
   methods: {
-    handleScroll(){
+    handleScroll() {
       //滚动条距离顶部距离
-      let top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      let top =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
       this.backtopShow = top;
-      if(top > this.hotListNavTop){
+      if (top > this.hotListNavTop) {
         //隐藏header
         this.headerIsShow = false;
         //添加吸顶样式
-        this.hotListNav.classList.add("fixed");        
-      }else{
+        this.hotListNav.classList.add("fixed");
+      } else {
         this.headerIsShow = true;
-         this.hotListNav.classList.remove("fixed"); 
+        this.hotListNav.classList.remove("fixed");
       }
     }
   },
@@ -99,15 +109,27 @@ a {
   color: #333;
 }
 .fixed_box {
-    position: fixed;
-    right: 0em;
-    bottom: 0.6rem;
-    height: 0.54rem;
-    width: 0.54rem;
-    line-height: 0.15rem;
+  position: fixed;
+  right: 0em;
+  bottom: 1rem;
+  height: 0.9rem;
+  width: 0.9rem;
+  line-height: 0.25rem;
 }
 .fixed_box a img {
-    width: 100%;
-    font-size: 12px;
+  width: 100%;
+  font-size: 12px;
+}
+
+.swiper-container {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+.swiper-container img{
+  width:100%;
 }
 </style>

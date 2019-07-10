@@ -34,16 +34,16 @@ export default {
     //notice的轮播
     let oUl = this.$refs.oUl;
     this.timer = setInterval(() => {
-      oUl.style.transition = "top 1s";
-      this.noticeTop -= 0.4;
+      oUl.style.transition = "top .5s";
+      this.noticeTop -= 0.68;
       setTimeout(() => {
-        if ((this.noticeTop = 0.4)) {
+        if ((this.noticeTop = 0.68)) {
           oUl.style.transition = "";
           this.noticeTop = 0;
           let temp = this.noticeList.shift();
           this.noticeList.push(temp);
         }
-      }, 1000);
+      }, 1500);
     }, 2000);
   },
   methods: {},
@@ -60,31 +60,32 @@ a {
 /* notice */
 .notice {
   background: #fff;
-  height: 0.4rem;
+  height: 0.68rem;
   margin-top: 0.16rem;
 }
 .notice dl {
   overflow: hidden;
   position: relative;
-  padding-left: 1.03rem;
+  padding-left: 1.72rem;
 }
 .notice dt {
-  width: 1.03rem;
-  margin-top: 0.1rem;
-  text-align: right;
-  position: absolute;
-  left: 0;
-  top: 0;
+  width: 1.72rem;
+    margin-top: 0.17rem;
+    padding-right: 0.14rem;
+    text-align: right;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 .notice dt img {
-  width: 0.84rem;
-  margin-right: 0.08rem;
+  width: 1.41rem;
+  margin-right:0.08rem;
 }
 
 .notice dd {
   overflow: hidden;
   position: relative;
-  height: 0.4rem;
+  height: 0.68rem;
 }
 .notice ul {
   position: absolute;
@@ -94,10 +95,10 @@ a {
   width: 100%;
 }
 .notice ul li {
-  line-height: 0.4rem;
-  height: 0.4rem;
-  padding-right: 0.12rem;
-  font-size: 0.14rem;
+  line-height: 0.68rem;
+  height: 0.68rem;
+  padding-right: 0.2rem;
+  font-size: 0.22rem;
 }
 </style>
 

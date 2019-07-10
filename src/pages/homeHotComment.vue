@@ -114,29 +114,29 @@ a {
 }
 /* 热评 */
 .hotComment {
-  margin-top: 0.1rem;
+  margin-top: 0.16rem;
 }
 .hotTitle,
 .recommendTit,
 .BookCourierTit {
   position: relative;
   background: #fff;
-  padding: 0.05rem 0 0.06rem;
+  padding: 0.09rem 0 0.1rem;
   box-shadow: 0px 1px 2px #dddcdd;
 }
 .hotTitle h2,
 .recommendTit h2,
 .BookCourierTit h2{
-  height: 0.3rem;
+  height: 0.5rem;
 }
 
 .hotTitle h2 img,
 .recommendTit h2 img,
 .BookCourierTit h2 img {
-  width: 1.38rem;
+  width: 2.3rem;
 }
 .hotMain {
-  padding: 0 0.12rem;
+  padding: 0 0.2rem;
   background: #fff;
 }
 .hotList ul {
@@ -145,29 +145,29 @@ a {
 .hotMain .bookWrap {
   position: relative;
   margin-bottom: 2px;
-  padding-left: 1.3rem;
+  padding-left: 2.2rem;
   overflow: hidden;
-  min-height: 1.5rem;
+  min-height: 2.5rem;
 }
 .hotMain .bookWrap .cover {
-  margin: 0.09rem 0;
-  height: 1.32rem;
-  width: 1.32rem;
+  margin: 0.15rem 0;
+  height: 2.2rem;
+  width: 2.2rem;
   position: absolute;
   left: 0;
   top: 0;
   text-align: center;
 }
 .hotMain .bookWrap .cover img {
-  height: 1.3rem;
+  height: 2.2rem;
   max-width: 100%;
 }
 .hotMain .bookWrap .name {
   color: #000;
-  font-size: 0.13rem;
-  line-height: 0.18rem;
-  margin-top: 0.12rem;
-  height: 0.18rem;
+  font-size: 0.2.2rem;
+  line-height: 0.3rem;
+  margin-top: 0.2rem;
+  height: 0.3rem;
   text-overflow: ellipsis;
   overflow: hidden;
   -webkit-line-clamp: 1;
@@ -176,63 +176,62 @@ a {
 }
 .hotMain .bookWrap .startWrap {
   overflow: hidden;
-  line-height: 0.12rem;
-  margin-top: 0.06rem;
+  line-height: 0.2rem;
+  margin-top: 0.1rem;
 }
 .hotMain .bookWrap .startWrap span.full,
 .hotList ul li .startWrap span.full {
   background-image: url(../assets/imgs/home/full.png);
-  background-size: 0.12rem 0.12rem;
+  background-size: 0.2rem 0.2rem;
 }
 .hotMain .bookWrap .startWrap span.half,
 .hotList ul li .startWrap span.half {
   background-image: url(../assets/imgs/home/halfstart.png);
-  background-size: 0.12rem 0.12rem;
+  background-size: 0.2rem 0.2rem;
 }
 .hotMain .bookWrap .startWrap span,
 .hotList ul li .startWrap span {
   float: left;
-  height: 0.12rem;
-  width: 0.12rem;
-  margin: 0 0.03rem 0 0;
+  height: 0.2rem;
+  width: 0.2rem;
+  margin: 0 0.05rem 0 0;
 }
 .hotMain .bookWrap .startWrap b,
 .hotList ul li .startWrap b {
   float: left;
-  font-size: 0.12rem;
-  margin-left: 0.06rem;
+  font-size: 0.2rem;
+  margin-left: 0.1rem;
   color: #ff511c;
   font-weight: 400;
 }
 .hotMain .bookWrap .priceWrap,
 .hotList ul li .priceWrap {
   overflow: hidden;
-  line-height: 0.18rem;
-  margin-top: 0.04rem;
+  line-height: 0.3rem;
+  margin-top: 0.07rem;
 }
 .hotMain .bookWrap .priceWrap .price,
 .hotList ul li .priceWrap .price {
   float: left;
   color: #e60000;
-  font-size: 0.14rem;
+  font-size: 0.24rem;
 }
 .hotMain .bookWrap .priceWrap .original,
 .hotList ul li .priceWrap .original {
   float: left;
   color: #999999;
-  font-size: 0.13rem;
-  margin-left: 0.07rem;
+  font-size: 0.22rem;
+  margin-left: 0.12rem;
   text-decoration: line-through;
 }
-.hotMain .bookWrap .review,
-.hotList ul li .review {
+.hotMain .bookWrap .review{
   color: #666666;
-  font-size: 0.12rem;
-  line-height: 0.18rem;
-  height: 0.54rem;
-  padding: 0.03rem 0.09rem;
+  font-size: 0.2rem;
+  line-height: 0.3rem;
+  height: 0.9rem;
+  padding: 0.05rem 0.15rem;
   background: #f3f3f3;
-  margin: 0.06rem 0 0;
+  margin: 0.1rem 0 0;
   text-overflow: ellipsis;
   overflow: hidden;
   -webkit-line-clamp: 2;
@@ -241,7 +240,7 @@ a {
   box-sizing: border-box;
 }
 .hotMain .bookWrap .review span,
-.hotList ul li .review {
+.hotList ul li .review span{
   color: #e60000;
 }
 .hotList ul {
@@ -256,23 +255,23 @@ a {
 }
 .hotList ul li .bookWrap {
   background: #fff;
-  padding: 0.09rem 0 0.1rem 0;
+  padding: 0.15rem 0 0.17rem 0;
 }
 .hotList ul li .cover {
   text-align: center;
-  padding: 0.03rem 0;
+  padding: 0.05rem 0;
 }
 .hotList ul li .cover img {
   max-width: 100%;
-  height: 1.2rem;
+  height: 2rem;
 }
 .hotList ul li .name {
   color: #000;
-  font-size: 0.13rem;
-  line-height: 0.18rem;
-  margin-top: 0.07rem;
-  padding: 0 0.09rem 0 0.12rem;
-  height: 0.18rem;
+  font-size: 0.22rem;
+  line-height: 0.3rem;
+  margin-top: 0.12rem;
+  padding: 0 0.15rem 0 0.2rem;
+  height: 0.3rem;
   text-overflow: ellipsis;
   overflow: hidden;
   -webkit-line-clamp: 1;
@@ -281,36 +280,37 @@ a {
 }
 .hotList ul li .startWrap {
   overflow: hidden;
-  padding: 0 0 0 0.12rem;
-  line-height: 0.12rem;
-  margin-top: 0.06rem;
+  padding: 0 0 0 0.2rem;
+  line-height: 0.2rem;
+  margin-top: 0.1rem;
 }
 .hotList ul li .priceWrap {
   overflow: hidden;
-  padding: 0 0.06rem 0 0.12rem;
-  line-height: 0.18rem;
-  margin-top: 0.04rem;
+  padding: 0 0.1rem 0 0.2rem;
+  line-height: 0.3rem;
+  margin-top: 0.07rem;
 }
 .hotList ul li .review {
   color: #666666;
-  font-size: 0.12rem;
-  line-height: 0.18rem;
+  font-size: 0.2rem;
+  line-height: 0.3rem;
   background: #f3f3f3;
-  margin: 0.06rem 0.03rem 0;
-  padding: 0.03rem 0.09rem;
+  margin: 0.1rem 0.05rem 0;
+  padding: 0.05rem 0.15rem;
   text-overflow: ellipsis;
   overflow: hidden;
   -webkit-line-clamp: 2;
   display: -webkit-box;
   -webkit-box-orient: vertical;
+  box-sizing:border-box;
 }
 .fiveStarLink a {
   display: block;
   text-align: center;
-  font-size: 0.14rem;
+  font-size: 0.24rem;
   color: #4a4a4a;
-  height: 0.5rem;
-  line-height: 0.5rem;
+  height: 0.84rem;
+  line-height: 0.84rem;
   background: #efbf41;
 }
 

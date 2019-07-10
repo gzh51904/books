@@ -169,23 +169,23 @@ export default {
 </script>
 <style scoped>
 .hotList {
-  margin-top: 0.1rem;
+  margin-top: 0.16rem;
 
 }
 .hotList .hTitle {
   text-align: center;
   background: #fff;
-  box-shadow: 0px 1px 0.06rem #dddcdd;
-  line-height: 0.4rem;
+  box-shadow: 0px 1px 0.1rem #dddcdd;
+  line-height: 0.68rem;
   box-sizing: border-box;
 }
 .hTitle img {
-  width: 1.5rem;
-  padding: 0.12rem 0 0.14rem;
+  width: 2.5rem;
+  padding: 0.2rem 0 0.24rem;
 }
 .hotNavBar {
-  height: 0.44rem;
-  margin-top: 0.06rem;
+  height: 0.74rem;
+  margin-top: 0.1rem;
   box-shadow: 0px 1px 2px #dddcdd;
   overflow: hidden;
 }
@@ -195,27 +195,27 @@ export default {
   overflow: auto;
   background: #fff;
   width: 100%;
-  height: 0.5rem;
+  height: 0.74rem;
 }
 .hotNavBar ul li {
-  width: 0.8rem;
+  width: 125.5px;
   flex-shrink: 0;
   cursor: pointer;
   text-align: center;
-  height: 0.44rem;
+  height: 0.74rem;
 }
 .hotNavBar ul li.cur span {
   color: #e60000;
-  border-top: solid #e60000 0.03rem;
+  border-top: solid #e60000 0.06rem;
 }
 
 .hotNavBar ul li span {
-  font-size: 0.12rem;
+  font-size: 0.22rem;
   color: #666666;
   display: block;
-  border-top: solid #fff 0.03rem;
-  height: 0.44rem;
-  line-height: 0.42rem;
+  border-top: solid #fff 0.06rem;
+  height: 0.74rem;
+  line-height: 0.68rem;
   border-right: 1px solid #e5e5e5;
 }
 .booksList {
@@ -230,11 +230,11 @@ export default {
 }
 .booksList ul li .name {
   color: #000;
-  font-size: 0.12rem;
-  line-height: 0.18rem;
-  margin-top: 0.07rem;
-  padding: 0 0.09rem 0 0.12rem;
-  height: 0.36rem;
+  font-size: 0.22rem;
+  line-height: 0.3rem;
+  margin-top: 0.12rem;
+  padding: 0 0.15rem 0 0.2rem;
+  height: 0.6rem;
   text-overflow: ellipsis;
   overflow: hidden;
   -webkit-line-clamp: 2;
@@ -243,8 +243,8 @@ export default {
 }
 .hotList .more {
   text-align: center;
-  height: 0.48rem;
-  line-height: 0.48rem;
+  height: 0.8rem;
+  line-height: 0.8rem;
 }
 
 .hotList .fixed {
