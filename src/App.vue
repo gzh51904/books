@@ -1,44 +1,18 @@
 <template>
   <div class="app">
-    <!-- <el-row>
-      <el-col :span="18">
-        <el-menu
-          :default-active="active"
-          mode="horizontal"
-          @select="handleSelect"
-          background-color="#545c64"
-          text-color="#fff"
-          active-text-color="#58bc58"
-          router
-        >
-          <el-menu-item
-            v-for="(item,idx) in pages"
-            :key="item.name"
-            :index="item.path"
-            class="item-left"
-          >
-            <el-badge :value="cartlen" class="item" v-if="item.name=='Cart' && log">{{item.title}}</el-badge>
-            <template v-else>{{item.title}}</template>
-            <el-divider direction="vertical" v-if="!(idx == (pages.length-1))"></el-divider>
-          </el-menu-item>
-        </el-menu>
-      </el-col>
-      <el-col :span="6" v-if="!log">
-        <el-link type="success" :underline="false" @click="goto('Login')">登录</el-link>
-        <el-link type="success" :underline="false" @click="goto('Reg')">注册</el-link>
-      </el-col>
-      <el-col :span="6" v-else>
-        <el-link type="success" :underline="false" @click="logout">退出</el-link>
-      </el-col>
-    </el-row>-->
     <transition enter-active-class="fadeIn animated" mode="out-in">
       <router-view></router-view>
     </transition>
 
     <!-- 底部菜单 -->
-    <mt-tabbar v-model="selected">
-      <mt-tab-item :id="item.title" v-for="item in pages" :key="item.name" :class="{fontRedColor:item.title == selected}">
-        <img :src="item.img1" slot="icon" v-if="item.title == selected" />
+    <mt-tabbar v-model="selected" @click.native="goto(selected)">
+      <mt-tab-item
+        :id="item.name"
+        v-for="item in pages"
+        :key="item.name"
+        :class="{fontRedColor:item.name == selected}"
+      >
+        <img :src="item.img1" slot="icon" v-if="item.name == selected" />
         <img :src="item.img" slot="icon" v-else />
         {{item.title}}
       </mt-tab-item>
@@ -48,10 +22,6 @@
 
 <script>
 import Vue from "vue";
-
-import ElementUI from "element-ui";
-import "element-ui/lib/theme-chalk/index.css";
-Vue.use(ElementUI);
 
 import MintUI from "mint-ui";
 import "mint-ui/lib/style.css";
@@ -73,8 +43,8 @@ export default {
         },
         {
           title: "分类",
-          path: "/discover",
-          name: "Discover",
+          path: "/category",
+          name: "Category",
           img: require("./assets/imgs/icon/kind.png"),
           img1: require("./assets/imgs/icon/kind1.png")
         },
@@ -98,32 +68,16 @@ export default {
           img1: require("./assets/imgs/icon/redcapationl1.png")
         }
       ],
-      selected: "首页"
+      selected: "Home"
     };
   },
   computed: {
-    cartlen() {
-      return this.$store.state.cart.goodslist.reduce((pre, item) => {
-        return pre + item.qty;
-      }, 0);
-    },
-    log() {
-      return this.$store.state.common.logined;
-    },
-    active() {
-      return "/" + this.$store.state.common.appActive.split("/")[1];
-    }
+    
   },
   methods: {
-    goto(name) {
-      this.$router.push({
-        name
-      });
-    },
-    logout() {
-      this.$store.commit("changeLog", false);
-      localStorage.removeItem("Authorization");
-      this.$axios.get("/verify");
+    goto(){
+      console.log('this.$router',this.$router)
+      this.$router.push({name:this.selected});
     }
   },
   created() {
@@ -146,18 +100,122 @@ export default {
 </script>
 
 <style>
+html {
+  font-size: 100px;
+}
+@media screen and (max-width: 384px) {
+  html {
+    font-size: 60px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 62.5px;
+  }
+}
+
+@media screen and (max-width: 416px) {
+  html {
+    font-size: 65px;
+  }
+}
+
+@media screen and (max-width: 432px) {
+  html {
+    font-size: 67.5px;
+  }
+}
+
+@media screen and (max-width: 448px) {
+  html {
+    font-size: 70px;
+  }
+}
+
+@media screen and (max-width: 464px) {
+  html {
+    font-size: 72.5px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 75px;
+  }
+}
+
+@media screen and (max-width: 496px) {
+  html {
+    font-size: 77.5px;
+  }
+}
+@media screen and (max-width: 512px) {
+  html {
+    font-size: 80px;
+  }
+}
+@media screen and (max-width: 528px) {
+  html {
+    font-size: 82.5px;
+  }
+}
+@media screen and (max-width: 544px) {
+  html {
+    font-size: 85px;
+  }
+}
+@media screen and (max-width: 560px) {
+  html {
+    font-size: 87.5px;
+  }
+}
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 90px;
+  }
+}
+@media screen and (max-width: 592px) {
+  html {
+    font-size: 92.5px;
+  }
+}
+@media screen and (max-width: 608px) {
+  html {
+    font-size: 95px;
+  }
+}
+@media screen and (max-width: 624px) {
+  html {
+    font-size: 97.5px;
+  }
+}
+@media screen and (max-width: 640px) {
+  html {
+    font-size: 100px;
+  }
+}
 * {
   margin: 0px;
   padding: 0px;
 }
-html{
-  font-size: 100px;
+body {
+  max-width: 640px;
+  margin: 0 auto;
+  background: #f3f3f3;
+  font-size: 16px;
 }
-.mint-tabbar{
-  height:0.55rem;
-}
-.fontRedColor{
-  color:red !important;
+ul,
+li {
+  list-style: none;
 }
 
+.mint-tabbar {
+  height: 0.55rem;
+  position: fixed;
+  bottom: 0;
+}
+.fontRedColor {
+  color: red !important;
+}
 </style>

@@ -1,47 +1,64 @@
 <template>
   <div class="home">
-    <div class="search">
-      <h1>
-        <img src="../assets/imgs/home/logo.png" alt />
-      </h1>
-    </div>
+    <homeSearchHeader></homeSearchHeader>
+    <!-- 轮播图 -->
+    <home-swipe></home-swipe>
+    <!-- 小nav -->
+    <homeMinNav></homeMinNav>
+    <!-- 公告 -->
+    <homeNotice></homeNotice>
+        <!-- newBook -->
+    <homeNewBook></homeNewBook>
+      <!-- 淘书 -->
+    <homeTaoBook></homeTaoBook>
+       <!-- 热评 -->
+    <homeHotComment></homeHotComment>
+       <!-- 推荐书单 -->
+    <homeRecommend></homeRecommend>
+      <!-- 新书速递 -->
+    <homeBookCourier></homeBookCourier>
+    <!-- 热榜 -->
+    <homeHotList></homeHotList>
+
   </div>
 </template>
+
 <script>
+import homeSwipe from './homeSwipe.vue'
+import homeSearchHeader from './homeSearchHeader.vue'
+import homeMinNav from './homeMinNav.vue'
+import homeNotice from './homeNotice.vue'
+import homeNewBook from './homeNewBook.vue'
+import homeTaoBook from './homeTaoBook.vue'
+import homeHotComment from './homeHotComment.vue'
+import homeRecommend from './homeRecommend.vue'
+import homeBookCourier from './homeBookCourier.vue'
+import homeHotList from './homeHotList.vue'
 export default {
   data() {
     return {
-      goodsList: []
+    
     };
   },
-  async created() {},
-  methods: {}
+  components:{
+    homeSwipe,
+    homeSearchHeader,
+    homeMinNav,
+    homeNotice,
+    homeNewBook,
+    homeTaoBook,
+    homeHotComment,
+    homeRecommend,
+    homeBookCourier,
+    homeHotList
+  }
 };
 </script>
-<style>
-.search {
-  height: 0.54rem;
-  background: red;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
+
+<style scoped>
+a {
+  text-decoration: none;
+  color: #333;
 }
 
-.search h1 {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 0.38rem;
-  margin-top: 0.09rem;
-}
-
-.search h1 img {
-  width: 1.1rem;
-}
-
-img {
-  border: none;
-  vertical-align: top;
-  font-size: 12px;
-}
 </style>
