@@ -5,14 +5,14 @@
     </transition>
 
     <!-- 底部菜单 -->
-    <mt-tabbar v-model="selected" @click.native="goto(selected)">
+    <mt-tabbar v-model="selected" @click.native="goto(selected)" v-show="menuShow">
       <mt-tab-item
-        :id="item.name"
+        :id="item.path"
         v-for="item in pages"
         :key="item.name"
-        :class="{fontRedColor:item.name == selected}"
+        :class="{fontRedColor:item.path == selected}"
       >
-        <img :src="item.img1" slot="icon" v-if="item.name == selected" />
+        <img :src="item.img1" slot="icon" v-if="item.path == selected" />
         <img :src="item.img" slot="icon" v-else />
         {{item.title}}
       </mt-tab-item>
@@ -22,12 +22,12 @@
 
 <script>
 import Vue from "vue";
-
+import "animate.css";
 import MintUI from "mint-ui";
 import "mint-ui/lib/style.css";
 Vue.use(MintUI);
 
-import "animate.css";
+import { mapState, mapMutations } from "vuex";
 
 export default {
   name: "app",
@@ -68,17 +68,35 @@ export default {
           img1: require("./assets/imgs/icon/redcapationl1.png")
         }
       ],
-      selected: "Home"
+      selected: "/home"
     };
   },
-  computed: {},
+  computed: {
+    ...mapState({
+      menuShow(state) {
+        let te = "/" + window.location.hash.slice(1).split("/")[1];
+        if (te) {
+          this.selected = te;
+        }
+        return state.common.menuShow;
+      }
+    })
+  },
   methods: {
-    goto() {
-      console.log("this.$router", this.$router);
-      this.$router.push({ name: this.selected });
+    ...mapMutations(["changeMenuShow"]),
+    goto(selected) {
+      if (selected != "/home" && selected != "/category") {
+        this.changeMenuShow(false);
+      }
+      this.$router.push({ path: this.selected });
     }
   },
   created() {
+    let te = "/" + window.location.hash.slice(1).split("/")[1];
+    if (te) {
+      this.selected = te;
+    }
+
     if (sessionStorage.getItem("store")) {
       this.$store.replaceState(
         Object.assign(
@@ -212,10 +230,10 @@ li {
   z-index: 100;
 }
 .mint-tabbar a {
-    color: #333333;
-    font-size: 0.22rem;
-    display: block;
-    height: 0.88rem;
+  color: #333333;
+  font-size: 0.22rem;
+  display: block;
+  height: 0.88rem;
 }
 .mint-tab-item-icon {
   width: 0.36rem;
@@ -223,7 +241,7 @@ li {
   margin-top: 0.03rem;
   height: 0.36rem;
 }
-.mint-tab-item-label{
+.mint-tab-item-label {
   text-align: center;
   line-height: 0.5rem;
   font-size: 0.22rem;

@@ -12,6 +12,7 @@ import Login from '../pages/Login.vue'
 import Reg from '../pages/Reg.vue'
 import Goods from '../pages/goods.vue'
 import axios from 'axios'
+import store from '../vuex'
 
 let router = new VueRouter({
     routes:[
@@ -65,7 +66,7 @@ let router = new VueRouter({
         }
         
     ],
-    scrollBehavior (to, from, savedPosition) {       
+    scrollBehavior (to, from, savedPosition) {     
         if(savedPosition) {
             setTimeout(() => {
                 window.scrollTo(savedPosition.x, savedPosition.y)
@@ -74,6 +75,13 @@ let router = new VueRouter({
     }
 })
 router.beforeEach((to, from, next) => { 
+    
+    //显示隐藏菜单
+    if(to.matched[0].path != "/home" && to.matched[0].path !="/category"){
+      store.commit('changeMenuShow',false)
+    }else{
+        store.commit('changeMenuShow',true)
+    }
 
     //判断是否需要权限
     if(to.matched.some(item=>item.meta.requiresAuth)){
