@@ -263,7 +263,7 @@ export default {
   top: 0.1rem;
   right: 0.2rem;
   border-radius: 0.08rem;
-  background: url("../assets/imgs/mobileicon.png") no-repeat -5.13rem -0.24rem;
+  background: url("../assets/imgs/mobileicon.png") no-repeat -309px -12px;
 }
 
 .msg .loadingtime {

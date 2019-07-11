@@ -242,6 +242,7 @@ export default {
 }
 .hotList .more {
   text-align: center;
+  width:100%;
   height: 0.8rem;
   line-height: 0.8rem;
 }
