@@ -4,6 +4,8 @@ export default {
         appActive:'',
         //登录状态
         logined:false,
+        //底部菜单
+        menuShow:true,
     },
     getters:{
         
@@ -17,6 +19,9 @@ export default {
         },
         changeAppActive(state,active){
             state.appActive = active;
+        },
+        changeMenuShow(state,bool){
+            state.menuShow = bool;
         }
     }
 }

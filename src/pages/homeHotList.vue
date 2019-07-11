@@ -148,7 +148,6 @@ export default {
     }
   },
   created() {
-    console.log(this.selected);
   },
   methods: {
     changeNav(item) {
@@ -195,7 +194,7 @@ export default {
   overflow: auto;
   background: #fff;
   width: 100%;
-  height: 0.74rem;
+  height: 0.84rem;
 }
 .hotNavBar ul li {
   width: 125.5px;
@@ -246,12 +245,17 @@ export default {
   height: 0.8rem;
   line-height: 0.8rem;
 }
-
+.hotList .more a {
+    font-size: 0.24rem;
+    color: #8e8e8e;
+    display: block;
+}
 .hotList .fixed {
   position: fixed;
   top: 0;
   width: 100vw;
   margin-top: 0;
   z-index: 999;
+  left:0;
 }
 </style>

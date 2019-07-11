@@ -54,6 +54,7 @@ export default {
     color: #666666;
     line-height: 0.6rem;
 }
+
 .pagefoot .copyRight {
     font-size: 0.14rem;
     color: #8e8e8e;

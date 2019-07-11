@@ -56,15 +56,14 @@ export default {
     return {
       backtopShow: 0,
       hotListNav: null,
-      hotListNavTop: 0,
+      hotListNavTop: 3000,
       headerIsShow: true
     };
   },
   mounted() {
     this.hotListNav = this.$refs.hotList.$refs.hotNavBar;
-    this.hotListNavTop =
-      this.hotListNav.offsetTop + this.hotListNav.offsetHeight + 380;
-
+    this.hotListNavTop = this.hotListNav.offsetTop + window.screen.height;
+    
     //监听滚动条滚动
     window.addEventListener("scroll", this.handleScroll);
   },
@@ -75,6 +74,7 @@ export default {
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
+
       this.backtopShow = top;
       if (top > this.hotListNavTop) {
         //隐藏header
@@ -122,14 +122,14 @@ a {
 }
 
 .swiper-container {
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    list-style: none;
-    padding: 0;
-    z-index: 1;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
 }
-.swiper-container img{
-  width:100%;
+.swiper-container img {
+  width: 100%;
 }
 </style>
