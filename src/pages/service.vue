@@ -257,12 +257,12 @@ export default {
 }
 .msg li.rg::before {
   content: "";
-  width: 0.6rem;
-  height: 0.6rem;
+  width: 35px;
+  height: 35px;
   position: absolute;
   top: 0.1rem;
   right: 0.2rem;
-  border-radius: 0.08rem;
+  border-radius: 5px;
   background: url("../assets/imgs/mobileicon.png") no-repeat -309px -12px;
 }
 
