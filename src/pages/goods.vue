@@ -18,6 +18,32 @@ export default {
 
     }
   },
+  mounted() {
+    //监听滚动条滚动
+    // window.addEventListener("scroll", this.handleScroll);
+
+  },
+  methods:{
+    //  handleScroll(idx){
+    //   let top = window.pageYOffset ||
+    //     document.documentElement.scrollTop ||
+    //     document.body.scrollTop;
+    //     // console.log(top)
+    //    let lishow = document.getElementsByClassName("listshow");
+		// 				if(top >= lishow[0].offsetTop) {
+		// 					// console.log(lishow[i].offsetTop);、
+    //           lishow[idx].className = '';
+    //           lishow[0].className = 'current'
+		// 					}else if(top >= lishow[1].offsetTop){
+    //             lishow[idx].className = '';
+    //             lishow[1].className = 'current'
+    //           }else{
+    //             lishow[idx].className = '';
+    //             lishow[2].className = 'current'
+    //           }
+							
+		// 				}
+  },
   components:{
     goodstop,
     goodscontent,
