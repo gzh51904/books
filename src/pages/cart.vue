@@ -38,7 +38,7 @@
             <div class="activeList">
               <ul>
                 <li v-for="(ele ,idx) in goodslist" :key="idx">
-                  <div class="listCheckBox J_check" :class="{listCheckBox:!isChecked,selected:isChecked}" @click="Checked"></div>
+                  <div class="listCheckBox J_check" :class="{listCheckBox:!isChecked,selected:isChecked}" @click="Checked(ele.id)"></div>
                   <div class="book"><div class="bookInner">
                     <div class="bookCover">
                       <a>
@@ -55,14 +55,17 @@
                       </div>
                       <div class="oparateArea">
                         <div class="countEdit">
-                          <span class="decrement" @click="cut">-</span>
-                          <input ref="num" autocomplete="off" type="text" sid="86639835" 
-                          class="num J_input inputNum" id="input86639835" v-model="numbers" max="3457" shopcount="1">
-                          <span class="increment" @click="add">+</span>
+                          <span class="decrement" @click="cut(ele.id)">-</span>
+                          <template>
+                          <input ref="num" autocomplete="off" type="text"  @change="changnum(ele.id,$event,ele.numbers)"
+                           @blur="blurnum(ele.id,$event,ele.numbers)"
+                          class="num J_input inputNum"  v-model="ele.numbers" max="3457" shopcount="1">
+                          </template>
+                          <span class="increment" @click="add(ele.id)">+</span>
                         </div>
                         <div class="otherEdit">
-                          <i class="addFav J_collect" sid="86639835" bid="6882596" id="fav6882596" onclick="addFavorite(6882596,this)">收藏</i> 
-                          <i class="delete J_delate" @click="del(id)">删除</i>
+                          <!-- <i class="addFav J_collect" sid="86639835" bid="6882596" id="fav6882596" onclick="addFavorite(6882596,this)">收藏</i>  -->
+                          <i class="delete J_delate" @click="remove(ele.id)">删除</i>
                         </div>
                       </div>
                     </div>
@@ -89,7 +92,7 @@
         <div class="totalWrap" v-if="fshow">
             <div class="listCheckBox J_check" :class="{listCheckBox:!isChecked,selected:isChecked}" @click="Checked"></div>
             <div class="settlement" id="J_submitBtn" :class={settlement:!isChecked,cur:isChecked}>去结算<span id="J_SumCount">(0)</span></div>
-            <div class="carResult"><div class="totalMoney">总计：<i id="J_SumZongJia">¥50.9</i></div><div class="totalDiscount">已优惠：<i id="J_SumYouhui">¥0</i></div></div>
+            <div class="carResult"><div class="totalMoney">总计：<i id="J_SumZongJia">¥{{allselects.toFixed(2)}}</i></div><div class="totalDiscount">已优惠：<i id="J_SumYouhui">¥0</i></div></div>
         </div>
         <div class="editWrap" v-else >
             <div class="clearnoStock" id="J_deleteStock">清除缺货</div>
@@ -197,65 +200,36 @@
 <script>
 
 export default {
+    computed:{
+          goodslist(){
+              return this.$store.state.cart.goodslist.map((item,idx)=>{
+                  return{
+                      idx:idx+1,
+                      ...item
+                  }
+              });
+          },
+     allselects(){
+        return this.$store.state.cart.goodslist.reduce((pre,item)=>{
+            return pre + item.price*item.numbers
+        },0)
+    },
+    },
   data() {
     return {
-      numbers:1,
+    //   numbers:1,
       show:false,
+      
       fshow:true,
-      isChecked:true,
-    //   navs:[{
-    //       title:"购物车",
-    //       name:'shopcart',
-    //       path:'/shopcart'
-    //   },{
-    //       title:"淘书团购物车",
-    //       name:'totalcart',
-    //       path:'/totalcart'
-    //   }]
-      goodslist:[{
-          id:1,
-          img:'http://image31.bookschina.com/2018/zuo/9/1362558.jpg',
-          title:'摆渡人',
-          preice:36,
-          zhekou:24.5,
-          num:1
-      },{ 
-          id:2,
-          img:'http://image31.bookschina.com/2005/051219/894305.jpg',
-          title:'传奇传',
-          preice:20,
-          zhekou:10.5,
-          num:1
-
-      },{
-          id:3,
-          img:'http://image31.bookschina.com/2009/20090511/469666.jpg',
-          title:'插图本说岳全传',
-          preice:28.5,
-          zhekou:23.4,
-          num:1
-      },{
-          id:4,
-          img:'http://image31.bookschina.com/2018/zuo/9/1362558.jpg',
-          title:'明代笔记小说大观(全四册)',
-          preice:298.5,
-          zhekou:217.4,
-          num:1
-      }],
-
+      isChecked:true
     };
   },
   methods:{
-    cut(){
-      this.numbers = this.numbers - 1;
-      if(this.numbers <= 1){
-        this.numbers = 1;
-        
-      }
+    cut(id,numbers){ 
+    this.$store.commit('cut',id);
     },
-    add(){
-      this.numbers = this.numbers + 1;
-      console.log(this);
+    add(id){
+      this.$store.commit('addnum',id);
       },
     sh(){
         this.show = !this.show;
@@ -265,17 +239,21 @@ export default {
         this.fshow = !this.fshow;
     },
     Checked(){
-        // console.log(this)
+        console.log(this)
         this.isChecked = !this.isChecked;
-        
+    },
+    changnum($event,id,numbers){
+       this.$store.commit('changnum',{id,numbers});
+    },
+    remove(id){
+      this.$store.commit('remove', id)
+      console.log(id);
+    },
+    blurnum($event,id,numbers){
+     this.$store.commit('blurnum',{id,numbers});
+    },
+    
 
-    },
-    del(id){
-      
-    },
-    components(){
-
-    },
     creaded(){
         // let components = {}
         // this.navs.forEach(nav=>{
