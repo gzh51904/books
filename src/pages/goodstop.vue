@@ -41,22 +41,28 @@
   </div>
 </template>
 <script>
+import { constants } from 'crypto';
+import { setTimeout } from 'timers';
 export default {
   data() {
     return {
       show: false,
       tabs: [
         {
-          title: "图书"
+          title: "图书",
+          
         },
         {
-          title: "评论"
+          title: "评论",
+          
         },
         {
-          title: "详情"
+          title: "详情",
+          
         }
       ],
-      activeIdx: 0
+      activeIdx: 0,
+
     };
   },
   methods: {
@@ -64,9 +70,18 @@ export default {
       this.show = !this.show;
     },
     changeTab(idx, e) {
-      this.activeIdx = idx;
-    }
-  }
+      this.activeIdx = idx; 
+      console.log(idx);
+      let lishow = document.getElementsByClassName("listshow");
+      console.log(lishow[idx]);
+      let ih = lishow[idx].offsetTop;
+      console.log(ih);
+      setTimeout((ih)=>{ window.scrollTo(0,ih);},1000)
+     
+    },
+	}
+
+    
 };
 </script>
 <style>
@@ -110,10 +125,10 @@ export default {
   text-align: center;
   line-height: 0.88rem;
 }
-.header .headerInner .detailNav ul li.current  {
+.header .headerInner .detailNav ul li.current a {
   color: #e60000;
-  
-  border-bottom: 5px solid red;
+  padding-bottom:0.25rem;
+  border-bottom: 2px solid red;
 }
 .header .shareBtn {
   position: absolute;
