@@ -164,7 +164,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 .fh,
 .gb {
   position: fixed;

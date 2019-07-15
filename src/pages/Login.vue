@@ -2,8 +2,6 @@
   <div>
     <login-header/>
     <loginContent/>
-    
-
   </div>
 </template>
 <script>

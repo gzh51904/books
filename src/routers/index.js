@@ -15,6 +15,7 @@ import Phoneinput from "../pages/RegPhoneinput.vue"
 import Phonecheck from "../pages/RegPhonecheck.vue"
 import Setpsw from "../pages/RegSetpsw.vue"
 import Finish from "../pages/RegFinish.vue"
+import Usercenter from "../pages/Usercenter.vue"
 import axios from 'axios'
 import store from '../vuex'
 
@@ -87,6 +88,11 @@ let router = new VueRouter({
             name:'Goods',
             path:'/goods/:id',
             component:Goods
+        },
+        {
+            name:'Usercenter',
+            path:'/usercenter',
+            component:Usercenter
         }
         
     ],

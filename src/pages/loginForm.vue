@@ -310,6 +310,33 @@ export default {
     background: url(../assets/imgs/login/showPassWord.png) no-repeat center;
     background-size: 0.36rem 0.28rem;
 }
+.errorTip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 98;
+}
+.errorTip div {
+    display: table;
+    color: white;
+    font-size: 0.28rem;
+    width: 100%;
+    height: 100%;
+}
+.errorTip div p {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.errorTip div p span {
+    display: inline-block;
+    padding: 0.25rem .2rem;
+    margin: 0 1rem;
+    border-radius: 0.1rem;
+    background-color: rgba(0,0,0,.8);
+}
 </style>
 
 

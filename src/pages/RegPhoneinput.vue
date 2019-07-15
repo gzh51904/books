@@ -95,8 +95,9 @@ export default {
         },
         // 手机号码验证 跳下一步
         goPhonecheck(){
-            let testcode = this.identifyCode.toUpperCase()           
-            if(this.code != testcode ){
+            let testcode = this.identifyCode.toUpperCase()
+            let test = this.code.toUpperCase()           
+            if(test != testcode ){
                 this.codeTip="1px solid #e60000";
             }else{
                 if(!reg.test(this.telephone)){

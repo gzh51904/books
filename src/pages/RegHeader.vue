@@ -1,19 +1,19 @@
 <template>
     <header class="header">
-    <div class="headerInner">
+    <div class="headerInner"  style="padding:0">
         <div class="returnBtn">
-            <a href="javascript:goBack()"></a>
+            <a href="#" @click="goback"></a>
         </div>
             <div class="head_lable"><span>注册</span></div>
             <div class="shortCut" id="shortCut"  @click="changeInner"></div>
         <div class="shortCutLayer"  v-show="show">
             <div class="shortCutInner">
                 <ul>
-                    <li class="homeLink"><a href="/" @click="goHome">首页</a></li>
+                    <li class="homeLink"><a href="#" @click.prevent="goto('Home')">首页</a></li>
                     <li class="tstLink"><a href="http://t.bookschina.com/">淘书团</a></li>
-                    <li class="kindLink"><a href="/books/kindlist">分类搜索</a></li>
-                    <li class="carLink"><a href="#"  @click="goCart">购物车</a></li>
-                    <li class="accountLink"><a href="/usercenter/myhome">我的账户</a></li>
+                    <li class="kindLink"><a href="#" @click.prevent="goto('Category')">分类搜索</a></li>
+                    <li class="carLink"><a href="#"  @click.prevent="goto('Cart')">购物车</a></li>
+                    <li class="accountLink"><a href="#" @click.prevent="goto('Mine')">我的账户</a></li>
                 </ul>
                 <span class="uptriangle"></span>
             </div>
@@ -21,7 +21,7 @@
     </div>
 </header>
 </template>
-<script scoped>
+<script>
 export default {
     data(){
         return{
@@ -32,21 +32,21 @@ export default {
         changeInner(){
             this.show = !this.show
         },
-        goHome(){
-            this.$router.replace("/home");
+        goto(name){
+            this.$router.push({name})
         },
-        goCart(){
-            this.$router.replace("/cart");
+        goback(){
+            window.history.back();
         }
     }
 };
 </script>
-<style>
+<style scoped>
 .header {
-  background: #fff;
-  box-shadow: 0px 0px 0.1rem #d4d2d3 !important;
-  position: relative !important;
-  z-index: 901;
+    background: #fff;
+    box-shadow: 0px 0px 10px #d4d2d3;
+    position: relative;
+    z-index: 20;
 }
 .header .headerInner {
     position: relative;
@@ -66,13 +66,14 @@ export default {
   background-size: 0.2rem 0.35rem;
 }
 .header .head_lable {
-  text-align: center;
-  height: 0.88rem;
-  line-height: 0.88rem;
+    text-align: center;
+    height: 0.88rem;
+    line-height: 0.88rem;
 }
 .header .head_lable span {
-  font-size: 0.3rem;
-  color: #333333;
+    display: block;
+    font-size: 0.3rem;
+    color: #333333;
 }
 .header .shortCut {
   position: absolute;

@@ -91,6 +91,9 @@ export default {
       this.$router.push({ path: this.selected });
     }
   },
+  destroyed(){
+    this.changeMenuShow(true);
+  },
   created() {
     let te = "/" + window.location.hash.slice(1).split("/")[1];
     if (te) {

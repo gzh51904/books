@@ -4,7 +4,7 @@
         <div class="returnBtn">
             <a href="#" @click="goback"></a>
         </div>
-            <div class="head_lable"><span>登录</span></div>
+            <div class="head_lable"><span>我的中图</span></div>
             <div class="shortCut" id="shortCut"  @click="changeInner"></div>
         <div class="shortCutLayer"  v-show="show">
             <div class="shortCutInner">

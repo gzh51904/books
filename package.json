@@ -15,6 +15,7 @@
     "identify": "^0.1.5",
     "mint-ui": "^2.2.13",
     "vue": "^2.6.10",
+    "vue-avatar-cropper": "^1.0.5",
     "vue-router": "^3.0.6"
   },
   "devDependencies": {

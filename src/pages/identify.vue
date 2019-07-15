@@ -57,7 +57,7 @@
       },
       contentHeight: {
         type: Number,
-        default: 80
+        default: 60
       }
     },
     methods: {
