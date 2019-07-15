@@ -1,5 +1,7 @@
 <template>
+    <div>
          <div class="loginForm">
+             <!-- 用户名 -->
             <div class="inputItem userNameWrap">
                 <span class="label"></span>
                 <div class="inputWrap">
@@ -7,6 +9,7 @@
                     <span class="clearInput" ref="usnclear" style="display: none;" @click="clearUsn"></span>
                 </div>
             </div>
+            <!-- 密码 -->
             <div class="inputItem userPasWrap">
                 <span class="label"></span>
                 <div class="inputWrap">
@@ -16,15 +19,14 @@
                     <span class="IsShowPas show" id="IsShowPas" v-else @click="changePsw"></span>
                 </div>
             </div>
-
+            <!-- 图形输入 -->
             <div class="inputItem imgcodeWrap ImgCode">
-                <div class="inputWrap ">
+                <div class="inputWrap "  :style="{border:codeTip}">
                     <input type="text" class="inputblock" id="imgcode" v-model="code" @input="codeinput" autocomplete="off" placeholder="请输入图形验证码">
                     <span class="clearInput" ref="codeclear" style="display: none;" @click="clearCode"></span>
                 </div>
-                <div class="imgWrap" id="modifycodeImg">
-                    
-                    <loginFormIndentify></loginFormIndentify>
+                <div class="imgWrap" id="modifycodeImg" @click="refreshCode">                  
+                    <s-identify :identifyCode="identifyCode"></s-identify>
                 </div>
             </div>
             <div class="nextStep" ref="red" @click="loginIn">
@@ -32,14 +34,21 @@
             </div>
             <div class="loginLink">
                 <a href="/forgot" class="forgotPasLink">忘记密码</a>
-                <a class="registLink" href="#" @click="goReg">新用户注册</a>
-                
+                <a class="registLink" href="#" @click="goReg">新用户注册</a>               
             </div>
-
         </div>
+        <!-- 错误提示 -->
+        <div class="errorTip" :style="{display:tipShow}" @click="closeTip">
+            <div>
+                <p>
+                    <span class="text">用户名或密码错误</span>
+                </p>
+            </div>
+        </div>
+    </div>
 </template>
 <script>
-import loginFormIndentify from "./loginFormIndentify";
+import SIdentify from "./identify"
 export default {
     data(){
         return {
@@ -48,13 +57,19 @@ export default {
             code:"",
             show:"true",
             color:"#666a6b",
-            type:"password"
+            type:"password",
+            identifyCode:"",
+            identifyCodes:"1234567890ABCDRFGHIJKLMNOPQRSTUVWSYZ",
+            tipShow:"none",
+            codeTip:"1px solid #e3e3e3"
         }
     },
     components:{
-        loginFormIndentify
+         // 图形验证
+        SIdentify
     },
     methods:{
+        // clear按钮的显示
         usninput(){
             if(this.username.length==0){
             this.$refs.usnclear.style="display: none;"; return
@@ -68,11 +83,13 @@ export default {
              this.$refs.pswclear.style="display: inline;";
         },
         codeinput(){
+            this.codeTip="1px solid #e3e3e3";
             if(this.code.length==0){
             this.$refs.codeclear.style="display: none;"; return
             }
              this.$refs.codeclear.style="display: inline;";
         },
+        // 小眼睛功能
         changeText(){
             this.show=!this.show;
             this.type="text"
@@ -81,6 +98,7 @@ export default {
             this.show=!this.show;
             this.type="password"
         },
+        // 清除输入框
         clearUsn(){
             this.username = "";
             this.$refs.usnclear.style="display: none;"
@@ -93,28 +111,60 @@ export default {
             this.code = "";
             this.$refs.codeclear.style="display: none;"
         },
+        // 去注册
         goReg(){
             this.$router.replace("/reg");
         },
+        // 点击登录验证
         loginIn(){
-            let username = this.username;
+            console.log();
+            
+            let phone = this.username;
             let password = this.password;
-            this.$axios
+            let codego = this.code.toUpperCase() 
+            let testcode = this.identifyCode.toUpperCase()           
+            if(codego != testcode ){
+                this.codeTip="1px solid #e60000";
+            }else{
+                this.$axios
             .get("/login", {
               params: {
-                username,
+                phone,
                 password
               }
             }).then(({data,headers}) => {
               if (data.code == 250) {
-                alert("用户名或密码错误");
+                this.tipShow="block"
               } else if (data.code == 1000) {
                   console.log(data); 
                   localStorage.setItem("Authorization",data.data);
                   let targetPath = this.$route.query.redirectTo;
                 this.$router.replace(targetPath?targetPath:"/home");
-              }
-            })
+                }
+                })
+            }
+            
+        },
+        // 关闭提示
+        closeTip(){
+            this.tipShow="none";
+        },
+        // 图形验证码的东西
+        randomNum(min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        },
+        refreshCode() {
+            console.log(111);
+            
+            this.identifyCode = "";
+            this.makeCode(this.identifyCodes, 4);
+        },
+        makeCode(o, l) {
+            for (let i = 0; i < l; i++) {
+            this.identifyCode += this.identifyCodes[
+            this.randomNum(0, this.identifyCodes.length)
+            ];
+            }
         }
     },
     updated(){
@@ -123,6 +173,10 @@ export default {
         }else{
             this.$refs.red.style="background:#666a6b"
         }
+    },
+    mounted() {      
+    this.identifyCode = "";
+    this.makeCode(this.identifyCodes, 4);
     }
 }
 </script>

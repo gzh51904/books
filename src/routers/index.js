@@ -11,6 +11,10 @@ import Cart from '../pages/cart.vue'
 import Login from '../pages/Login.vue'
 import Reg from '../pages/Reg.vue'
 import Goods from '../pages/goods.vue'
+import Phoneinput from "../pages/RegPhoneinput.vue"
+import Phonecheck from "../pages/RegPhonecheck.vue"
+import Setpsw from "../pages/RegSetpsw.vue"
+import Finish from "../pages/RegFinish.vue"
 import axios from 'axios'
 import store from '../vuex'
 
@@ -57,7 +61,27 @@ let router = new VueRouter({
         {
             name:'Reg',
             path:'/reg',
-            component:Reg
+            component:Reg,
+            children:[{
+                path:'/',
+                redirect:{name:'Phoneinput'}
+            },{
+                name:"Phoneinput",
+                path:"phoneinput",
+                component:Phoneinput
+            },{
+                name:"Phonecheck",
+                path:"phonecheck",
+                component:Phonecheck
+            },{
+                name:"Setpsw",
+                path:"setpsw",
+                component:Setpsw
+            },{
+                name:"Finish",
+                path:"finish",
+                component:Finish
+            }]
         },
         {
             name:'Goods',

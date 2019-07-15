@@ -7,8 +7,8 @@ const {formatData,token} = require('../tools')
 const {mongo:{find}} = require('../db');
 
 Router.get("/",async (req,res)=>{
-    let {username,password} = req.query;
-    let data = await find('user',{username,password})
+    let {phone,password} = req.query;
+    let data = await find('user',{phone,password})
     
      
     if(data.length==0){
@@ -16,7 +16,7 @@ Router.get("/",async (req,res)=>{
         return res.send(formatData({code:250,msg:'login fail'}))     
     }else{
         //登录ok，生成token返回前端
-        let Athorization = token.create(username);
+        let Athorization = token.create(phone);
         res.send(formatData({data:Athorization}))
     }
 })

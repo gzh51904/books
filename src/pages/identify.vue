@@ -1,6 +1,6 @@
 <template>
-  <div class="s-canvas" :identifyCode="identifyCode">
-    <canvas id="s-canvas" :width="contentWidth" :height="contentHeight" ></canvas>
+  <div class="s-canvas">
+    <canvas id="s-canvas" :width="contentWidth" :height="contentHeight"></canvas>
   </div>
 </template>
 <script>
@@ -13,11 +13,11 @@
       },
       fontSizeMin: {
         type: Number,
-        default: 20
+        default: 16
       },
       fontSizeMax: {
         type: Number,
-        default: 35
+        default: 40
       },
       backgroundColorMin: {
         type: Number,
@@ -57,7 +57,7 @@
       },
       contentHeight: {
         type: Number,
-        default: 38
+        default: 80
       }
     },
     methods: {
@@ -77,7 +77,8 @@
         let ctx = canvas.getContext('2d')
         ctx.textBaseline = 'bottom'
         // 绘制背景
-        ctx.fillStyle = this.randomColor(this.backgroundColorMin, this.backgroundColorMax)
+        let white = "#FFFFFF"
+        ctx.fillStyle = white;
         ctx.fillRect(0, 0, this.contentWidth, this.contentHeight)
         // 绘制文字
         for (let i = 0; i < this.identifyCode.length; i++) {
@@ -102,17 +103,17 @@
       },
       drawLine (ctx) {
         // 绘制干扰线
-        for (let i = 0; i < 3; i++) {
-          ctx.strokeStyle = this.randomColor(this.lineColorMin, this.lineColorMax)
-          ctx.beginPath()
-          ctx.moveTo(this.randomNum(0, this.contentWidth), this.randomNum(0, this.contentHeight))
-          ctx.lineTo(this.randomNum(0, this.contentWidth), this.randomNum(0, this.contentHeight))
-          ctx.stroke()
-        }
+        // for (let i = 0; i < 8; i++) {
+        //   ctx.strokeStyle = this.randomColor(this.lineColorMin, this.lineColorMax)
+        //   ctx.beginPath()
+        //   ctx.moveTo(this.randomNum(0, this.contentWidth), this.randomNum(0, this.contentHeight))
+        //   ctx.lineTo(this.randomNum(0, this.contentWidth), this.randomNum(0, this.contentHeight))
+        //   ctx.stroke()
+        // }
       },
       drawDot (ctx) {
         // 绘制干扰点
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < 100; i++) {
           ctx.fillStyle = this.randomColor(0, 255)
           ctx.beginPath()
           ctx.arc(this.randomNum(0, this.contentWidth), this.randomNum(0, this.contentHeight), 1, 0, 2 * Math.PI)
@@ -130,9 +131,3 @@
     }
   }
 </script>
-<style>
-#s-canvas{
-    width: 1.8rem;
-    height: 0.95rem;
-}
-</style>
