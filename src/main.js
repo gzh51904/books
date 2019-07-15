@@ -48,3 +48,4 @@ new Vue({
   router,
   store
 }).$mount('#app')
+// 将router和store注入app根实例。调用的时候用this，eg：this.store

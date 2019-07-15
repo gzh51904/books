@@ -1,5 +1,5 @@
 <template>
-<div class="goodsdetails">
+<div class="goodsdetails listshow">
   <div class="detaiInfor">
     <div class="DetailTit">图文详情</div>
     <div class="baseInfor">

@@ -1,5 +1,5 @@
 <template>
-<div class="goodspicbook">
+<div class="goodspicbook listshow">
    <div class="bookProduct" id="book">
             <div class="bookCover">
                 <div class="bookPic">

@@ -1,5 +1,6 @@
 <template>
-   <div class="BookComment" id="comment">
+ <div class="goodstold listshow">
+   <div class="BookComment" >
             <div class="commentTit">
                     <b>商品评论</b><span>（3条）</span>            </div>
         <div class="commentContent">
@@ -97,8 +98,8 @@
                             </div>
                         </div>
                     </div>
-
         </div> 
+        </div>
 </template>
 <script>
 export default {
