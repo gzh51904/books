@@ -3,27 +3,27 @@
    <div class="bookProduct" id="book">
             <div class="bookCover">
                 <div class="bookPic">
-                    <img src="http://image31.bookschina.com/2005/051205/1294266.JPG" alt="迷行记" id="imgBook">
+                    <img :src="info.img" alt="迷行记" id="imgBook">
                 </div>
                     <div class="rederScore"> <div class="rederScoreInner"><span>  读者评分<br>4.7分</span> </div></div>
             </div>
             <div class="bookInfor">
-                <h1>迷行记</h1>
+                <h1>{{info.title}}</h1>
                     <p>迷情江湖·定柔三迷</p>
             </div>
             <div class="bookPrice">
 
                 <div class="salePrice" id="divPrice">
                     <span class="urerLeave">1星价</span>
-                            <span class="price">¥10.4</span>
+                            <span class="price">{{info.price}}</span>
                             <span class="discount">(5.2折)</span>
                 </div>
                 <div class="otherPrice">
                             <span class="startPrice">
-                                2星价￥10.4
+                                2星价￥{{info.price}}
                             </span>
                     <span class="originalPrice">
-                        定价￥20.0
+                     {{info.zhekou}}
                     </span>
                 </div>
             </div>
@@ -64,7 +64,24 @@
 </template>
 <script>
 export default {
-    
+    data(){
+    return{
+       info:{}
+    }
+  },
+ async created(){
+        let {id} = this.$route.params;
+        console.log(id);
+        let {data} = await this.$axios.get('http://localhost:1995/goods/'+id);
+        
+        data = data.data[0]
+        console.log(data);
+        this.info = data;   
+    },
+  methods:{
+   
+  }
+
 }
 </script>
 <style>
