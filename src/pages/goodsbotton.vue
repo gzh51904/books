@@ -25,7 +25,7 @@
         </div>
         <div class="btn_group">
           <div class="de_row">
-            <div class="btn btn_red" id="addCart" data-bookid="1294266">
+            <div class="btn btn_red" id="addCart" @click="addcart">
               <span class="txt">加入购物车</span>
             </div>
           </div>
@@ -38,7 +38,16 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  data(){
+    return
+  },
+  methods:{
+    addcart(){
+      
+    }
+  }
+};
 </script>
 <style>
 .footer {

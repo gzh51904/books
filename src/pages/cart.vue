@@ -86,13 +86,16 @@
     </div>
 </div> -->
 <div class="footer" style="height:1.4rem;" >
-    <div class="myf"><p>再买<span>￥27.5</span>即可免运费 <a href="/Books/NewTeHui">去凑单 &gt;</a></p></div>
+    <div class="myf"><p>再买<span>
+        <!-- ￥{{yunfei.toFixed(2)}} -->
+        </span>即可免运费 <a href="/Books/NewTeHui">去凑单 &gt;</a></p></div>
     <div class="checkgroup">
-        <div class="allSelect J_selectALL selectAll">全选</div>
+        <div class="allSelect J_selectALL "  :class="{allselects:!isChecked,selectAll:isChecked}" @click="selectAll(isChecked)">全选</div>
         <div class="totalWrap" v-if="fshow">
             <div class="listCheckBox J_check" :class="{listCheckBox:!isChecked,selected:isChecked}" @click="Checked"></div>
-            <div class="settlement" id="J_submitBtn" :class={settlement:!isChecked,cur:isChecked}>去结算<span id="J_SumCount">(0)</span></div>
-            <div class="carResult"><div class="totalMoney">总计：<i id="J_SumZongJia">¥{{allselects.toFixed(2)}}</i></div><div class="totalDiscount">已优惠：<i id="J_SumYouhui">¥0</i></div></div>
+            <div class="settlement" id="J_submitBtn" :class={settlement:!isChecked,cur:isChecked}>去结算</div>
+            <div class="carResult"><div class="totalMoney">总计：<i id="J_SumZongJia">¥{{total.toFixed(2)}}</i></div>
+            <div class="totalDiscount">已优惠：<i id="J_SumYouhui">¥0</i></div></div>
         </div>
         <div class="editWrap" v-else >
             <div class="clearnoStock" id="J_deleteStock">清除缺货</div>
@@ -209,17 +212,27 @@ export default {
                   }
               });
           },
-     allselects(){
+     total(){
         return this.$store.state.cart.goodslist.reduce((pre,item)=>{
-            return pre + item.price*item.numbers
+            return pre + item.zhekou*item.numbers
         },0)
     },
+
+    // yunfei(){
+    //    let fei = 69;
+    // //    let shengyu = fei - this.total;
+    //    console.log(this.total);
+    // //    if(shengyu<=0){
+    // //       return shengyu ="已免运费"
+    // //    };
+    // //    return shengyu;
+    // }
     },
   data() {
     return {
     //   numbers:1,
       show:false,
-      
+    //   allselect:flase,/* 购物车全选中状态，默认为没有全选中 */
       fshow:true,
       isChecked:true
     };
@@ -252,7 +265,9 @@ export default {
     blurnum($event,id,numbers){
      this.$store.commit('blurnum',{id,numbers});
     },
-    
+    selectAll(isChecked){
+         this.isChecked = !this.isChecked;
+    },
 
     creaded(){
         // let components = {}
@@ -676,6 +691,10 @@ img {
     color: #333333;
     font-size: 0.24rem;
     background: url(http://m.bookschina.com/Content/images/checkboxicon.png) no-repeat 0.2rem center;
+    background-size: 0.32rem;
+}
+.footer .allSelect.selectAll {
+    background: url(http://m.bookschina.com/Content/images/carselected.png) no-repeat 0.2rem center;
     background-size: 0.32rem;
 }
 .footer .totalWrap {
